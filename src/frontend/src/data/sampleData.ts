@@ -1,0 +1,218 @@
+import type { AdmitCard, Job, Notification, Result } from "../backend.d";
+
+const now = BigInt(Date.now()) * BigInt(1_000_000);
+const sevenDaysAgo = now - BigInt(7 * 24 * 60 * 60) * BigInt(1_000_000_000);
+const recentDate = now - BigInt(1 * 24 * 60 * 60) * BigInt(1_000_000_000);
+
+export const sampleJobs: Job[] = [
+  {
+    id: BigInt(1),
+    title: "SSC CGL 2024 – Combined Graduate Level Examination",
+    department: "Staff Selection Commission",
+    organization: "Government of India",
+    qualification: "Bachelor's Degree from a recognized University",
+    vacancies: BigInt(17727),
+    lastDate: "2024-03-31",
+    category: "Central Govt",
+    officialLink: "https://ssc.nic.in",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(2),
+    title: "UPSC Civil Services Examination 2024",
+    department: "Union Public Service Commission",
+    organization: "Government of India",
+    qualification: "Degree from a recognized University",
+    vacancies: BigInt(1056),
+    lastDate: "2024-04-15",
+    category: "UPSC",
+    officialLink: "https://upsc.gov.in",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(3),
+    title: "Railway Group D Recruitment 2024 – RRB",
+    department: "Railway Recruitment Board",
+    organization: "Indian Railways",
+    qualification: "10th Pass / ITI Certificate",
+    vacancies: BigInt(103769),
+    lastDate: "2024-05-10",
+    category: "Railway",
+    officialLink: "https://www.rrbcdg.gov.in",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+  {
+    id: BigInt(4),
+    title: "IBPS PO 2024 – Probationary Officer Recruitment",
+    department: "Institute of Banking Personnel Selection",
+    organization: "Public Sector Banks",
+    qualification: "Graduation in any discipline",
+    vacancies: BigInt(4455),
+    lastDate: "2024-06-01",
+    category: "Banking",
+    officialLink: "https://www.ibps.in",
+    postedDate: sevenDaysAgo - BigInt(2 * 24 * 60 * 60) * BigInt(1_000_000_000),
+    isActive: true,
+  },
+  {
+    id: BigInt(5),
+    title: "NEET UG 2024 – National Eligibility cum Entrance Test",
+    department: "National Testing Agency",
+    organization: "Ministry of Health",
+    qualification: "10+2 with Physics, Chemistry, Biology",
+    vacancies: BigInt(100000),
+    lastDate: "2024-03-20",
+    category: "Medical",
+    officialLink: "https://neet.nta.nic.in",
+    postedDate: sevenDaysAgo - BigInt(5 * 24 * 60 * 60) * BigInt(1_000_000_000),
+    isActive: true,
+  },
+  {
+    id: BigInt(6),
+    title: "State Police Constable Recruitment 2024 – UP Police",
+    department: "Uttar Pradesh Police Recruitment Board",
+    organization: "Government of Uttar Pradesh",
+    qualification: "Intermediate (12th Pass)",
+    vacancies: BigInt(60244),
+    lastDate: "2024-04-30",
+    category: "State Govt",
+    officialLink: "https://uppbpb.gov.in",
+    postedDate:
+      sevenDaysAgo - BigInt(10 * 24 * 60 * 60) * BigInt(1_000_000_000),
+    isActive: true,
+  },
+];
+
+export const sampleResults: Result[] = [
+  {
+    id: BigInt(1),
+    title: "IBPS PO Mains Result 2024",
+    examBoard: "Institute of Banking Personnel Selection",
+    resultDate: "2024-03-15",
+    officialLink: "https://www.ibps.in",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(2),
+    title: "SSC CHSL Tier-1 Result 2024",
+    examBoard: "Staff Selection Commission",
+    resultDate: "2024-03-10",
+    officialLink: "https://ssc.nic.in",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(3),
+    title: "UPSC IAS Prelims 2023 Final Result",
+    examBoard: "Union Public Service Commission",
+    resultDate: "2024-02-28",
+    officialLink: "https://upsc.gov.in",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+  {
+    id: BigInt(4),
+    title: "RRB NTPC CBT-2 Result 2024",
+    examBoard: "Railway Recruitment Board",
+    resultDate: "2024-03-05",
+    officialLink: "https://www.rrbcdg.gov.in",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+];
+
+export const sampleAdmitCards: AdmitCard[] = [
+  {
+    id: BigInt(1),
+    examName: "SSC CGL Tier-1 Admit Card 2024",
+    examBoard: "Staff Selection Commission",
+    downloadLink: "https://ssc.nic.in",
+    examDate: "2024-04-09",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(2),
+    examName: "UPSC Civil Services Prelims Admit Card 2024",
+    examBoard: "Union Public Service Commission",
+    downloadLink: "https://upsc.gov.in",
+    examDate: "2024-05-26",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(3),
+    examName: "NEET UG 2024 Admit Card",
+    examBoard: "National Testing Agency",
+    downloadLink: "https://neet.nta.nic.in",
+    examDate: "2024-05-05",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+  {
+    id: BigInt(4),
+    examName: "IBPS Clerk Mains Admit Card 2024",
+    examBoard: "Institute of Banking Personnel Selection",
+    downloadLink: "https://www.ibps.in",
+    examDate: "2024-03-30",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+];
+
+export const sampleNotifications: Notification[] = [
+  {
+    id: BigInt(1),
+    title: "SSC CGL 2024 Notification Released – Apply Now",
+    description:
+      "Staff Selection Commission has released the official notification for Combined Graduate Level Examination 2024. Total 17,727 vacancies across various departments.",
+    date: "2024-03-12",
+    link: "https://ssc.nic.in",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(2),
+    title: "UPSC CSE 2024 – Last Date to Apply Extended",
+    description:
+      "Union Public Service Commission has extended the last date to apply for Civil Services Examination 2024 till April 15, 2024.",
+    date: "2024-03-11",
+    link: "https://upsc.gov.in",
+    postedDate: recentDate,
+    isActive: true,
+  },
+  {
+    id: BigInt(3),
+    title: "Railway Mega Recruitment 2024 – 1,03,769 Posts",
+    description:
+      "Indian Railways has announced mega recruitment drive for Group D posts. Applications open for all eligible candidates.",
+    date: "2024-03-08",
+    link: "https://www.rrbcdg.gov.in",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+  {
+    id: BigInt(4),
+    title: "IBPS PO 2024 Official Notification Out",
+    description:
+      "IBPS has released the official notification for Probationary Officer recruitment in Public Sector Banks for 2024.",
+    date: "2024-03-01",
+    link: "https://www.ibps.in",
+    postedDate: sevenDaysAgo,
+    isActive: true,
+  },
+  {
+    id: BigInt(5),
+    title: "NEET UG 2024 – Important Schedule Update",
+    description:
+      "NTA has updated the examination schedule for NEET UG 2024. Exam date confirmed as May 5, 2024.",
+    date: "2024-02-25",
+    link: "https://neet.nta.nic.in",
+    postedDate: sevenDaysAgo - BigInt(5 * 24 * 60 * 60) * BigInt(1_000_000_000),
+    isActive: true,
+  },
+];
